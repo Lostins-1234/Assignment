@@ -101,6 +101,16 @@ fuel-eu-maritime/
 | **Frontend** | `npm run dev` | Start React dev server |
 | | `npm run build` | Build for production |
 
+## 📸 Screenshots
+
+| Dashboard | Comparison |
+|-----------|------------|
+| ![Dashboard](screenshots/dashboard.png) | ![Comparison](screenshots/comparison.png) |
+
+| Banking | Pooling |
+|---------|---------|
+| ![Banking](screenshots/banking.png) | ![Pooling](screenshots/pooling.png) |
+
 ## ❓ Troubleshooting
 
 **Database Connection Failed?**
