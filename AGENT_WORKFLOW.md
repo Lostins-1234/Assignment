@@ -3,7 +3,7 @@
 ## Agents Used
 
 - **Cursor Agent (Claude Sonnet 4.5)** - Primary agent used throughout development
-- Code generation, refactoring, and architecture design
+- Code generation, refactoring, and architecture design,ChatGpt 5.2 for debugging and testing ,gemini 2.0 for  frontend UI suggestions
 
 ## Prompts & Outputs
 
@@ -137,21 +137,15 @@ Complete Prisma schema with:
 
 2. **Type Definitions:** Automatically created TypeScript interfaces matching the requirements
 
-3. **API Route Handlers:** Generated Express route handlers with proper error handling
-
-4. **React Components:** Created functional components with hooks, state management, and API integration
-
-5. **Database Repositories:** Generated Prisma repository implementations with domain mapping
+3. **React Components:** Created functional components with hooks, state management, and API integration
 
 ### Where Agent Failed or Hallucinated:
 
 1. **Pooling Algorithm Logic:** Initial implementation had incorrect surplus distribution logic - had to manually fix the algorithm
 
-2. **Banking Apply Logic:** Generated duplicate code that needed manual cleanup
+2. **Missing Validation:** Some edge cases weren't caught initially (e.g., empty pool members)
 
-3. **Missing Validation:** Some edge cases weren't caught initially (e.g., empty pool members)
-
-4. **ShipId vs RouteId:** Confusion between shipId and routeId - needed clarification in the domain model
+3. **ShipId vs RouteId:** Confusion between shipId and routeId - needed clarification in the domain model
 
 ### How Tools Were Combined Effectively:
 
@@ -171,47 +165,8 @@ Complete Prisma schema with:
    - Used tests to validate agent-generated code
    - Fixed issues found through testing
 
-4. **Codebase Search:**
-   - Used codebase search to understand existing patterns
-   - Ensured consistency across implementations
-   - Found and fixed dependency issues
-
 ## Best Practices Followed
 
-1. **Hexagonal Architecture:**
-   - Clear separation between core and adapters
-   - Core domain has no external dependencies
-   - Ports define interfaces, adapters implement them
-
-2. **TypeScript Strict Mode:**
-   - All code uses strict TypeScript
-   - Proper type definitions throughout
-   - No `any` types (except error handling)
-
-3. **Incremental Development:**
-   - Built backend first (APIs needed by frontend)
-   - Created domain models before implementations
-   - Tested each layer independently
-
-4. **Error Handling:**
-   - Proper error messages in API responses
-   - User-friendly error messages in UI
-   - Validation at both API and UI levels
-
-5. **Code Organization:**
-   - Domain logic in core/domain
-   - Use cases in core/application
-   - Infrastructure in adapters/
-   - Shared utilities in shared/
-
-## Metrics
-
-- **Total Files Created:** ~50 files
-- **Lines of Code:** ~3000+ lines
-- **Time Saved:** Estimated 15-20 hours of manual coding
-- **Issues Fixed:** 8 significant issues found and corrected
-- **Test Coverage:** Domain logic unit tests added
-
-
-
-
+ 1.Used Cursor Agent to overall architecture of the project allowing to effectively and rapidly generate code for each feature
+ 2.Used ChatGpt 5.2 for debugging and testing  owing to its good reasoning abilites
+ 3.Used Gemini 2.0 for frontend UI suggestions  owing to the previous experience with it
